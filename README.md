@@ -29,14 +29,12 @@ If needed install a recent [Yosys](https://github.com/YosysHQ/yosys)
 git clone https://github.com/YosysHQ/yosys.git
 cd yosys/
 make config-clang
-make -j8
 PREFIX=/home/markus/work/install/ make install
 ```
 
-Build the plugin pass (for some annoying reason `yosys-config` does not seem to
-handle non-standard install paths)
+Build the plugin pass
 ```
-$ clang++ `yosys-config --cxxflags --ldflags --ldlibs` -I /home/markus/work/install/share/yosys/include/ -o scanchain.so -shared scanchain.cc
+$ yosys-config --build scanchain.so scanchain.cc
 ```
 
 ## Usage
