@@ -1,3 +1,5 @@
+`default_nettype none
+
 module counter(input clk, input rst, output [7:0] result);
 
   reg [7:0] cntr;
